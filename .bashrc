@@ -132,3 +132,10 @@ export PS1="[\w]:"
 
 alias bashrc='vim "+normal Go" +startinsert ~/.bashrc'
 alias vimrc='vim "+normal Go" +startinsert ~/.vimrc'
+
+alias skel='cd ~/.vim/'
+
+# deleted the codi code that was previously here.
+
+
+alias app='vim app.js'
