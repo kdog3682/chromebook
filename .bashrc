@@ -119,9 +119,12 @@ alias sourcebash='source ~/.bashrc'
 alias gp=gitpush
 
 gitpush() {
-  git add.
-  git commit -m "gitpush all"
-  git push origin master
+  git add .vimrc
+  git add .bashrc
+  git add .gitignore
+  git add .gitconfig
+  git add  app.js
+  git commit -m "Updated"
 }
 
 # alias vimrc='vim ~/.vimrc'
@@ -132,3 +135,9 @@ export PS1="[\w]:"
 
 alias bashrc='vim "+normal Go" +startinsert ~/.bashrc'
 alias vimrc='vim "+normal Go" +startinsert ~/.vimrc'
+
+alias skel='cd ~/.vim/'
+alias app='vim app.js'
+
+
+
