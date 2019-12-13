@@ -12,5 +12,6 @@ redditbot
 .viminfo.tmp
 .Xauthority
 
+.env
 
 

@@ -72,6 +72,11 @@ inoremap abc {---}<space>
 
 iab log console.log
 iab fs! const fs = require('fs')
+iab * /*<CR><tab><CR><BS>*/<esc>kla
+
+
+
+
 
 
 

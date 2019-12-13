@@ -143,3 +143,6 @@ alias test='vim ~/code/test.js'
 
 alias code='cd ~/code/'
 alias gitignore='vim ~/.gitignore'
+
+
+alias v='cd ~/.vim'
