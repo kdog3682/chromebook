@@ -127,6 +127,11 @@ gitpush() {
   git commit -m "Updated"
 }
 
+gitall() {
+  git add .
+  git commit -m "commited all"
+}
+
 # alias vimrc='vim ~/.vimrc'
 alias sourcevim='source ~/.vimrc'
 
@@ -138,7 +143,6 @@ alias vimrc='vim "+normal Go" +startinsert ~/.vimrc'
 
 alias skel='cd ~/.vim/'
 alias app='vim ~/code/app.js'
-alias test='vim ~/code/test.js'
 
 
 alias code='cd ~/code/'
@@ -146,3 +150,5 @@ alias gitignore='vim ~/.gitignore'
 
 
 alias v='cd ~/.vim'
+
+
