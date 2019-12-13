@@ -1,4 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+# ~/.bashrc: executed by bash(1) f:or non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -137,7 +137,9 @@ alias bashrc='vim "+normal Go" +startinsert ~/.bashrc'
 alias vimrc='vim "+normal Go" +startinsert ~/.vimrc'
 
 alias skel='cd ~/.vim/'
-alias app='vim app.js'
+alias app='vim ~/code/app.js'
+alias test='vim ~/code/test.js'
 
 
-
+alias code='cd ~/code/'
+alias gitignore='vim ~/.gitignore'
