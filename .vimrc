@@ -62,13 +62,12 @@ nnoremap nn :w<CR>:!/usr/local/bin/node %<CR>
 
 
 "noremap { {}<ESC>ha
-inoremap { {<CR><BS>}<Esc>ko
+inoremap {<CR> {<CR><BS>}<Esc>ko
 
 inoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
 
 
 " This makes it kind of hard actually to type abthings. Because for a small moment you won't see anything.
-inoremap abc {---}<space> 
 
 iab log console.log
 iab fs! const fs = require('fs')
@@ -76,9 +75,83 @@ iab * /*<CR><tab><CR><BS>*/<esc>kla
 
 
 
+nnoremap cc Vypo
+iab <expr> date! strftime("%b %d, %Y")
 
 
 
 
+nnoremap vv :set paste <CR>a
+nnoremap bb :set nopaste
+
+function! GetSyntaxID()
+    return synID(line('.'), col('.'), 1)
+endfunction
+
+function! GetSyntaxParentID()
+    return synIDtrans(GetSyntaxID())
+endfunction
+
+function! GetSyntax()
+    echo synIDattr(GetSyntaxID(), 'name')
+    exec "hi ".synIDattr(GetSyntaxParentID(), 'name')
+endfunction
+
+
+
+
+
+
+
+hi Normal guibg=gray95
+hi NonText guifg=gray95
+hi FoldColumn guibg=gray95
+hi CursorLine guibg=gray90
+hi Title gui=bold guifg=gray25
+hi MarkdownHeadingDelimiter gui=bold guifg=gray25
+hi htmlSpecialChar guifg=black
+hi markdownBold gui=bold guifg=gray25
+hi markdownItalic guifg=gray25 gui=underline
+hi markdownUrl guifg=#2fb3a6
+hi markdownAutomaticLink guifg=#2fb3a6
+hi markdownLinkText guifg=#317849
+hi markdownUrlTitle guifg=#317849
+hi markdownBlockquote guifg=#317849 gui=bold
+hi markdownId guifg=#2fb3a6
+hi markdownIdDeclaration guifg=#317849 gui=bold
+hi markdownListMarker guifg=#317849
+highlight Cursor guibg=#15abdd
+
+
+
+
+
+
+func! Md_colors_setup()
+    syn match Background /^.*\<background\>.*$/
+    syn match Important /\<important\>/
+    syn match HelloThere /^Hello there!\s*.*$/
+    hi Background guibg=yellow ctermbg=yellow
+    hi Important guifg=red ctermfg=red
+    hi HelloThere guifg=blue ctermfg=yellow
+endfunc
+
+augroup COLORSCHEME_CHANGE | au!
+    au bufread,bufnew *.md call Md_colors_setup()
+augroup end
+
+" Commenting blocks of code.
+autocmd FileType javascript let b:comment_leader = '// '
+autocmd FileType vim              let b:comment_leader = '" '
+noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
+
+autocmd BufRead,BufNewFile *.vue setfiletype html
+
+
+
+
+iab iwa It was a mistake
 
 

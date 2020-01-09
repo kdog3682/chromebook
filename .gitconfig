@@ -2,3 +2,5 @@
 	email = kdog3682@gmail.com
 	name = kdog3682
 	password = Bankai3682
+[credential]
+	helper = store

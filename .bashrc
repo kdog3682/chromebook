@@ -152,3 +152,5 @@ alias gitignore='vim ~/.gitignore'
 alias v='cd ~/.vim'
 
 
+alias kdog='/home/kdog3682/'
+alias test='vim ~/code/test.js'
