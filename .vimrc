@@ -30,7 +30,7 @@ set smartindent
 
 
 set mouse=a
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 map <C-s><up> :tabr<cr>
 map <C-t><down> :tabl<cr>
@@ -69,10 +69,9 @@ inoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
 
 " This makes it kind of hard actually to type abthings. Because for a small moment you won't see anything.
 
-iab log console.log
-iab fs! const fs = require('fs')
-iab * /*<CR><tab><CR><BS>*/<esc>kla
-
+iab <expr> l( console.log
+iab <expr> fs! const fs = require('fs')
+iab <expr> * /*<CR><tab><CR><BS>*/<esc>kla
 
 
 nnoremap cc Vypo
@@ -81,8 +80,9 @@ iab <expr> date! strftime("%b %d, %Y")
 
 
 
-nnoremap vv :set paste <CR>a
-nnoremap bb :set nopaste
+" nnoremap vv :set paste <CR>a
+
+" nnoremap bb :set nopaste
 
 function! GetSyntaxID()
     return synID(line('.'), col('.'), 1)
@@ -152,6 +152,25 @@ autocmd BufRead,BufNewFile *.vue setfiletype html
 
 
 
-iab iwa It was a mistake
+"iab {read, write, append, remove, size, birth} = require('util.js')
+
+inoremap {<cr> {<cr>}<c-o>O
+imap jj <Esc>
+iabbrev @@ <-r>=expand('%:p')<cr>
+nnoremap <Leader><Tab> :b#<CR>
+nnoremap <BS> <C-^>
+nmap gt :bnext<CR>
+inoremap <C-J> <C-X><C-P>
+
+nnoremap <TAB> :bn<CR>
+
+nnoremap U <C-R>
+
+" autosource vimrc
+autocmd bufwritepost .vimrc source $MYVIMRC
+map <leader>v :tabe $MYVIMRC<cr>
+
+
+
 
 
