@@ -372,3 +372,5 @@ Is this possible?
 
   "Ctrl-H": "Hello"
 p  "Ctrl-H": "Hello"
+
+How do I add files to to the google dictionary list? 

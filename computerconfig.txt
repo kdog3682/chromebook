@@ -11,8 +11,6 @@ Don’t use the Clipboard History Pro. It has way too big of a finger-print. The
 
 
 
-
-
 OPTION + UP/DOWN = Move the Line.
 OPTION + SHIFT + UP/DOWN = Copy the Line.
 
