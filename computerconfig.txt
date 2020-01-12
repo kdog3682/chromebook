@@ -1,0 +1,146 @@
+Cleaning Macbook:
+Better names for olders.
+Don’t download EPUBs. Too hard to manage.
+Find a way to aggregate bookmarks.
+Don’t make rough draft templates on the computer. It rarely looks right. Program the rough draft as is.
+
+Don’t Download
+Clean the computer manually.
+Don’t use the Clipboard History Pro. It has way too big of a finger-print. There is not enough specific instruction and it will be extremely unwieldly.
+
+
+
+
+
+
+OPTION + UP/DOWN = Move the Line.
+OPTION + SHIFT + UP/DOWN = Copy the Line.
+
+CMD + SHIFT + K = Kill Line.
+
+CMD + L = Select Current Line
+
+CMD + UP/DOWN = Go to start/end of file.
+
+Color: KT (list from top)
+User Snippets: KU (shows a list on the top for CSS/JS/VUE, et cetera)
+Keymps: KM (shows a list on the right sidebar for vim/emacs et cetera)
+Default Keyboard: KF (JSON for keybindings)
+Default Settings: KA
+Keyboard Shortcuts: KD (useful)
+KS Settings JSON (Very Useful) (It’s the go to)
+User Settings: KG
+Keyboard shortcus again: KH
+Remote settings: KJ
+workspace settings: KL
+folder settings: K;
+
+DEFAULT CONFIG
+
+CMD + SHIFT
+x = extension
+e = editor
+
+MY CONFIG
+FN + Right/Left = Toggle Pages
+CTRL + Right/Left = Toggle Terminal
+OPTION Right/Left = Toggle Line-Start/End
+CTRL + OPTION
+n = code runner
+m = clear output
+, = terminal
+, = output
+
+MACBOOK (OPTION) = WINDOWS (ALT)
+
+FN + RIGHT + END
+FN + LEFT = HOME
+
+
+SAVE MACBOOK CLIPBOARD
+
+The computer is a fascinating too, .
+
+Karabiner Elements
+RIGHT CMD = Home (fn + left
+RIGHT OPT = End (fn + right
+RIGHT SHIFT = tab
+Caps = Esc
+
+
+
+NBEAPF
+
+HD
+
+
+Git
+Step 1: Initialize the folder with git init
+Step 2: Define a remote for the folder.
+Step 3: Add the files to the git on your computer.
+Step 4: Commit the files with a message.
+Step 5: Push the files online.
+Is there anything wrong with using git as a file-server?
+(Yes, there is)
+“git checkout -b abc”
+What is the b?
+git push -u origin master
+What is the u?
+What does upstream mean?
+I have a hard time understanding how the branches change.
+
+
+Macbook Config
+Download
+Karabiners Element
+VSCode
+sdfs
+df
+Retrieve
+sasda
+My Commonly Used Apps
+sdfsd
+fsd
+Files that should be connected to Github
+Bashrc
+Vimrc
+VSCODE
+CMD + SHIFT + P for PREFERENCES
+Open Keyboard Shortcuts (This is the Big One)
+There is a JSON version of it.
+CMD K, CMD T - Color Theme
+Configure Uesr Snippets
+Delete all to the left
+or delete all to the right … no i don’t think this is necessary.
+Yes hack the system to your liking, but don’t go over board.
+
+VSCODE
+What is ‘auto fix’?
+‘calls: show call hierarchy?
+ Don’t need zoom in and out.
+last edit location kq cmd
+file cmd p
+bracke cmd shift \
+Big ones
+cmd + shift + O = keyboard shortcuts
+CMD KH = the json version
+Small ONes
+You won’t need to configure the workspace folder because you will always be in one folder.
+Defaults
+My changes
+Not necessary to view mrkdown.
+I don’t really use a call hieracrhy.
+What is peek definition?
+I don’t use terminal in mulipesl
+I don’t need to open a new window.
+I don’t like using split editors.
+Fixed
+Word wrap should always be fixed. Remove it.
+What is  workbench interactive playground?
+WHat is auto fix?
+
+VSCODE Structural Notes
+
+
+I think it’s kind of funny that I write proposals to myself.
+

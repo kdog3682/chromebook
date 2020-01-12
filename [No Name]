@@ -1,0 +1,19 @@
+:bdelete f1.txt
+?ls! //displays all files in buffer.
+:bufdo e will cycle through all buffers and execute the e command.
+:tabdo e will do the same but for tabs. 
+You can close a buffer by doing :ls 2 or :ls 1
+First type :ls perhasp.
+
+You can close a buffer by doing :ls 2 or :ls 1
+First type :ls perhasp.
+You can close a buffer by doing :ls 2 or :ls 1
+First type :ls perhasp.
+
+You can close a buffer by doing :ls 2 or :ls 1
+You can close a buffer by doing :ls 2 or :ls 1
+
+
+You can close a buffer by doing :ls 2 or :ls 1
+toggle buffers by doing ctrl + ^.
+

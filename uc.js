@@ -1,4 +1,4 @@
-
+ 
 const fs = require('fs')       // EXTREMELY useful.
 const path = require('path')   // kind of useful.
 const chalk = require('chalk') // log(chalk.yellow.bold('Hello World'))
@@ -97,7 +97,11 @@ const prettierOptions = {
 // V2: Has Comments
 // V3: Has Comments and Linebreaks within function context
 
-function generateUtilsDotJSApp(outputfile, input = 'util.js') { // creates the utils.js
+function generateUtilsDotJSApp(outputfile, input = 'uc.js', ) { // creates the utils.js
+  
+  // This can be refactored a bit to make it more clear what's going on.
+  // generateBoilerplate
+  // updateUtils
   
   const text = read(input)
   const obj = tallyJSAdvanced(text)
@@ -109,13 +113,14 @@ function generateUtilsDotJSApp(outputfile, input = 'util.js') { // creates the u
     }
   }
   
-  const moduleExports = constructModuleExports(functionNames)
-  const replacedText = text.replace(/\nmodule.exports[^]*$/, '')
-  const comments = `\/\/ New write to ${input} was created on ${getDate()}.`
+  const moduleExports = constructModuleExports(functionNames) // for the parent.
+  const replacedText = text.replace(/\nmodule.exports[^]*$/, '')// for the parent.
+  const comments = `\/\/ New write to ${input} was created on ${getDate()}.` // for the p
+  
   const call = `const { ${functionNames.join(', ')} } = require(\'./${utilityfile}\')\n`
   write(utilityfile, replacedText + '\n\n' + moduleExports + '\n\n' + comments + '\n\n')
   
-  const appText = read(outputfile).replace(/^[^]*?require\(.*?\)\;/, call)
+  const appText = read(outputfile).replace(/^[^]*?require\(.*?\)\;/, call) //orchild
   write(outputfile, appText)
   // rwhandler('./app.js', './app.js', call)
   log(`Complete.\n Added ${count} new exports: ${exportlist}.`)
@@ -218,10 +223,6 @@ function read(input, path = '.') { // reads a file or a folder
     return fs.readdirSync(input + '/') //maybe this shouldn't be here
   }
 }
-
- 
-
-
 
 function write(file, contents, path = '.') {
   fs.writeFileSync(path + '/' + file, contents)
@@ -475,4 +476,5 @@ module.exports = {
 }
 
 // New write to util.js was created on 1/8/2020.
+// The new functions added were ...
 

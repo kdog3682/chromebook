@@ -1,0 +1,374 @@
+How does memory management work for a program?
+
+The things that I care about are ... being positive to the kids.
+
+If the object is not parsed, then you have to
+
+Write it with stringify, and write it the other way also.
+
+When I use the macbook finder,
+
+The land has destroyed the ability for teachers to teach.
+
+Students can no longer accept any teaching for the most part.
+
+Show the right way to do it.
+
+To not want to go to store,
+
+How do you append text to the start of a file?
+
+
+
+
+Entry:
+
+Jack stopped coming for a reason.
+Anthony stopped coming for a reason.
+August stopped coming for a reason.
+Edison and Stanley stopped coming for a reason.
+Tommy and Lin only come intermittently for a reason.
+JJ doesn't always come for a reason.
+Alvin only comes sometimes for a reason.
+The high schoolers stopped coming for a reason.
+Sam and Vincent stopped coming for a reason.
+
+There are demons inside of all of us. Darren has demons. Young has demons. Benson and Kevin have demons. I have demons. I immensely dislike their anti-team orientation. There is a proliferation of chaotic energy. I have acted with unconscious evil intent before. I have done so to my cousin numerous times. I did so to my sister. The “evil” they express is not true evil. It is the negative component of a child defending their personal phenotype.
+
+There are ironies at play. Darren wishes greatly to play with other kids. At the same time, he drives other kids away.
+
+
+
+Listen to Zen Zen Zense before basketball practice.
+Play 1 vs. 1 defense against the elementary schoolers.
+Designated Shooter Game.
+When you have the ball, I will guard you.
+When you don’t have the ball, I will
+Do you want to hear the rules or do you want to just play?
+Only one person is allowed to shoot.
+
+
+
+
+
+Life
+sdfsd
+
+Words
+sdf
+
+Coding Luffy Action Train:
+sdf
+
+Teaching:
+I did the best that I could. I have given 100% every single class. I will continue giving 100%. Much of what I tried to teach
+
+Work
+It’s not work if you love it.
+
+Fonts
+I don’t need fira code. I like the ones that I generally use. Rokkit, Minion Pro, Century New Book, Adobe
+  
+
+
+CORS
+Additional HTTP headers. Tells browser, whether a specific web res can be shared with a different.
+They need to have different origins.
+If origin isn’t same, they have to follow the CORS mechanism. Previously, different domains couldn’t do this stuff for sharing. It was not allowed. (Not sub-domains either.
+Cross-Origin-Resource-Sharing Mechanism.
+Chromebook allows certain ports, perhaps 3000 works, but 3001 doesn’t work.
+
+
+Coding Efficiency
+
+
+
+There should certainly be a way to parse the YouTube Playlist.
+
+
+
+Should i use pictures
+//estart
+Homework: Create a balance system for MIDDLE SCHOOL vs. ELEMENTARY SCHOOL 3 vs. 3 Basketball.
+
+Currently, 3 elementary schoolers vs. 3 middle schooler is not balanced.
+
+Your job for homework is to create a balance system so that the game will be fair and challenging for both sides.
+
+A balance system is also called a “handicap system.”
+
+Some Examples of handicaps that we have used in the past.
+“Elementary student shots are worth 3 points.”
+“Middle schoolers aren’t allowed to block shots.”
+“Pushup Game: Middle schoolers have to shoot from the 3 point line.”
+//end
+
+
+
+A “handicap” is something you give to one side, to make the game harder for them. For example, a 30 year old man will beat a 1 year old baby in a race. For this reason, we give the 30 year old man “handicaps.” Maybe he has to wear a 500 pound backpack. Maybe he has to be blindfolded. Maybe he has to run 10 times as far while running backwards while singing the song “Let It Go” and if he makes a single mistake while singing the song, he has to start over. These are all examples of handicaps. Middle school students have larger bodies than elementary students. As a result, a handicap system is needed to balance the difficulty of the game. Homework Instructions: Write a proposal for the handicap system we should for MIDDLE SCHOOL vs. ELEMENTARY SCHOOL 3 vs. 3 Basketball. The goal is to make basketball fun and challenging for both sides. Important: The handicaps have to be fair and reasonable. For example, it is not reasonable to have a middle schooler sing, “Let It Go” before shooting the basketball. textcal: too many words. textcal: too many words
+
+
+
+
+My proposal
+
+What’s a nice computer that runs Linux?
+
+Use the backside if necessary.
+
+The advantage of asynchronous
+
+
+
+
+
+Handicap System for Middle School vs. Elementary School 3 vs. 3
+
+Middle School: Your team can only take one shot per possession.
+Middle School: No shot-blocking. (You can pretend to block the shot, but you have to “miss.”)
+Middle School: No screens or picks.
+Middle School: When elementary students drive to the hoop, they have right-of-way.
+Middle School: Your shots are worth 1 point.
+Elementary School: Your shots are worth 2 points.
+
+The purpose for this handicap system is to make 3 vs. 3 challenging for both the elementary team, and also the middle school team.
+
+What do you think?
+
+Should any of the handicaps be changed?
+Should anything be added or removed.
+
+Write your proposed ideas below.
+
+
+
+
+//tcstart
+Handicap Playing System — Middle students must give elementary students right-of-way.
+
+“Right-of-way” is a term that comes from driving a car. When you’re driving down the street, you must yield to people on bicycles and people walking. This is known as right-of-way.
+
+Right-of-way does not mean to go “easy.” You can still destroy your opponent while giving them right-of-way.
+
+Adults give right-of-way to elementary, middle school, high school, and college students.
+College students give right-of-way to elementary, middle school, and high school students.
+High school students give right-of-way to elementary, and middle school students.
+Middle school students give right of way to elementary students.
+Elementary students give right-of-way to younger elementary students.
+Younger elementary students give right-of-way to kindergarten students.
+Kindergarten students give right-of-way to toddlers.
+Toddlers give right-of-way to babies.
+Babies do whatever they want.
+//end
+ A hiearchy based on age does not discriminate. You’re with your peer group.
+
+There is maturity, it just shows up differently.
+
+
+
+Many of these kids may never have the opportunity to drive a car?
+Money paid for innumerable
+
+
+
+
+Right-of-way Rule #1 —
+
+Right-of-way Rule #2 —
+
+
+The journey of becoming good at something.
+//estart
+Do it.
+Win? Do it harder.
+Lose? Fix what you did wrong. Do it again.
+
+Do it again.
+Win? Do it harder.
+Lose? Fix what you did wrong. Do it again.
+
+Do it every day.
+365 days a year.
+For 10 years.
+
+Become good.
+	
+	
+
+	Talent is not born. It is created.
+	Genius is not born. It is created.
+	Winning is not born. It is created.
+
+	Who creates it?
+	
+	YOU.
+
+//end
+
+“The secret to growing strong is to cheer for your friends to grow strong.”  — This is not necessarily true.
+
+Darren is afraid that others will see him.
+The way of China propagates a curse that cannot be overcome. You become locked into your system.
+
+
+
+
+No one likes anyone else. It makes for a pretty negative growing-up experience. That’s the inheritance of China I guess.
+
+
+
+He has to output the negative feelings some how.
+
+
+Why?
+
+It is the law of reflection, also known as karma.
+
+What you give to others
+
+
+
+Entry: I do feel conflicted about serving these kids, especially if they are pushing other kids away. However, by pushing others away, it diminishes the program for themselves.
+
+The kids do not have awareness for the process. A lot of these memories will be pruned away. However, I have a deep awareness of the process. And usually my awareness transfers to the
+
+Just by knowing that it exists, it will boost your own skills.
+
+//estart
+There is the you of the past.
+
+The you of the future.
+
+The you of mistakes.
+
+The you of successes.
+
+The you of scared.
+
+The you of brave.
+
+
+
+Every day, you get to choose.
+
+You get to choose what the past will be remembered as.
+
+You get to choose what the future will become.
+
+
+
+Who will you be today?
+
+
+//end
+
+
+
+
+
+
+
+
+
+
+CODE
+I’m not sure if Path.resolve antics should be used.
+I’m having a hard time incorporating everything together.
+Deeply nested objects are pretty interesting.
+
+
+Node File System
+Copy files
+Delete files
+Rename files
+
+Node Path System
+
+Path.resolve is an interesting thing because it is able to read … I would like to look at its notation.
+
+How does the javascript still work once it has been palced in
+
+
+
+How did the kings of fast food set up the logistics that have allowed them to dominate through the decades?
+Has there ever been a case where a small business transformed into a corporation?
+
+
+
+VSCODE and Structural Rules
+
+
+Thoughts on Monetary Investment
+
+Money and time can be converted into each other.
+
+
+
+My father always said
+
+How do you configure what shows up on Apple Macbook Launchpad?
+What is “Remote Disc?
+I have 2 accounts on my Macbook. Are the applications stored in a local place?
+Keynote is numbers.
+
+What is a login shell?
+what does bin stand for?
+Why is my user id 501?
+
+Once the initial catalyst is created, the rest wil lfollow.
+
+The money is optional.
+
+Lead first with the actions.
+Follow later with
+
+If python is slow, what is it used for?
+
+ 
+
+
+
+
+Chromebook.
+
+Activate one chrome book.
+
+
+
+Can local host run without an internet connection?
+
+Building Websites.
+
+If it’s too easy, I don’t think it willl be fun.
+
+How do I configure what items start up for Macbook?
+
+Catch all
+
+I don’t like using intellisense. Can someone convince me otherwise?
+
+	
+
+How can I define globalVariables to NodeJS?
+
+__dirname and file__name are global varibles that can be accessed anywhere and in any file.
+
+I would like to define additional such variables.
+
+“__var1”
+“-var2”
+“var3”
+“$var4”
+“--var5”
+
+Is this possible?
+  "Ctrl-H": "Hello"
+  "Ctrl-H": "Hello"
+  "Ctrl-H": "Hello"
+
+  "Ctrl-H": "Hello"
+
+
+
+  "Ctrl-H": "Hello"
+p  "Ctrl-H": "Hello"

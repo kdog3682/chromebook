@@ -1,6 +1,19 @@
 /*
 
-Q: Why should asynchronous code be used?
+Push it to an object.
+
+The YouTube API.
+
+The aggregation of information.
+
+
+Date: August 12th, 10:AM, 2019. Event: Players are shooting free-throws. Darren and August are shooting free-throws. Darren missed a few free-throws in a row. Darren: “I’m not good at basketball.” August: “If Darren’s not good at basketball, no one is.” textcal: This is not good because
+
+Q: When should asynchronous code NOT be used?
+sdfjsdlkflkdsf
+Currently, I am building a CLI-like tool. Everything at the moment runs offline. //qend
+
+Q: Is this interpretation of a web server correct? //aqend
 
 
 Q: Am I interpreting this correctly? ANd also, is writestream more expensive than appendFile since it has to go through the act of creating a 'Writable' stream object?
@@ -52,7 +65,7 @@ Q: Does anyone  use the Chrome caret editor? // Have some hard time with it.qend
 Do you write throw or continue when moving past an error in catch-try? wihout stopping the current program?
  How do you choose
  
- Q: How does require work?
+ Q: How does require work? //end
   
   "As long as the user experience is not affected, load it up as much as you want." I don't necessarily agree with this.
   #Unsorted
@@ -126,12 +139,14 @@ Common Javascript Errors: Missing a return
 
 */
 
-const { fs, path, axios, n, nn, t, tt, validSingletonSentenceRE, isSentenceRE, partitionsRE, validPartitionsRE, linebreak, ONEDAY, TODAY, MONTHS, getDate, directories, generateUtilsDotJSApp, cleanup, parseChunks, parseSentences, toNumber, toLetter, shuffle, appendObj, tally, matchTextLinesByInputQuery, inputIsArrayOrRest, isArray, words, read, write, append, remove, size, createDate, isFile, readP, writeP, prependText, tallyFunctions, tallyJSAdvanced, ordinal, allUnique, consolidate, getFilesWithUserInput, getFiles, constructModuleExports, removeComments, prettyHTML, aggregateSentences, wordCount, gp, finalConcat } = require('./uc.js')
+
+// Find a way to recover this as the new uc.js.
+const {validSingletonSentenceRE, isSentenceRE, partitionsRE, validPartitionsRE, linebreak, ONEDAY, TODAY, MONTHS, getDate, directories, generateUtilsDotJSApp, cleanup, parseChunks, parseSentences, toNumber, toLetter, shuffle, appendObj, tally, matchTextLinesByInputQuery, inputIsArrayOrRest, isArray, words, read, write, append, remove, size, createDate, readP, writeP, prependText, tallyFunctions, tallyJSAdvanced, ordinal, allUnique, consolidate, getFilesWithUserInput, getFiles, constructModuleExports, removeComments, prettyHTML, aggregateSentences, wordCount, gp, finalConcat } = require('./uc.js')
 
 const prettier = require('prettier');
 const chalk = require('chalk')
 const options = {parser: 'babel', singleQuote: false}
-
+const fs = require('fs')
 
 // Q: How would you turn console.log into log? might there be a better way of doing this?
 const log = {
@@ -195,36 +210,46 @@ function doit(file, fileoutputname, outputpath) { // 30 minutes debugging this d
     // Uses /* */ for the final partition.
     // Without the greedy operator, it keeps going and going, and then once it goes past, it will backtrack. With the greedy operator, it will stop at the first occurence.
        const results = text.matchAll(/Q\:\s(.*\?)\s*([^]*?)\s*\/\/\s*(.*?)qend/g)
+       // I think \s* should be changed to \s+ ... Although that wouldn't make much of a difference. Perhaps it needs to be changed to \n+
   log.redbold('START')
   for (const match of results) { // Use const so it is explicit that the el is not changing.
     let [_, question, code, comments] = match;
     log.yellow(question)
     log.green(comments)
     
-    try {
-      code = (prettier.format(replaceStartingComments(code), options))
-    }
-    catch (e){ //
-      log.red('Error in processing; ' + question)
-      continue;
-    }
-    contents.push({question, styleForReddit(code), comments})
-    log.blue('Contents pushed ' + (++count))
+    // try {
+    //   code = (prettier.format(code, options))
+    // }
+    // catch (e){ //
+    //   log.red('Error in processing; ' + question)
+    //   continue;
+    // }
+    // contents.push({question, code, comments})
+    // log.blue('Contents pushed ' + (++count))
     log.red('-----------------')
   
   }
   log.redbold('FINISH')
   
-  append(fileoutputname, contents, outputpath)
+  // append(fileoutputname, contents, outputpath)
 }
 
 
 function styleForReddit(s) { //
-  return s.replace(/\n\n/g, '\n\n&nbsp;\n\n')
+  return s.replace(/\n\/\//g, '\n').replace(/\n\n/g, '\n\n&nbsp;\n\n')
 }
 
+function isFile(input) {
+  return fs.statSync(input).isFile()
+}
+
+function isDirectory(input) {
+  return fs.statSync(input).isDirectory()
+}
+
+
 function parsePartitions(file) {
-  return read(file).match(/.*?:\n[^]+?\n\n)
+  return read(file).match(/.*?:\n[^]+?\n\n/)
 }
 
 let fileinputname = 'prettier.js'
@@ -233,17 +258,58 @@ let outputpath = './examples'
 
 
 // Q: Should an if-else be used here instead of 2 if statements? Should readFile and readFolder be combined together?
-function recursiveRead(input) {
+function recursiveRead(input) { //input is unilaterally a folder.
+  const store = {}
   if (isFile(input)) {
-    return read(input) // as file
+    return input // as file
   }
   
   if (isDirectory(input)) {
-    for (const item of read(input) {
-      let results = recursiveRead(item)
+    const files = fs.readdirSync(input)
+    store[input] = {}
+    store[input]['files'] = []
+    store[input]['folders'] = []
+    for (const item of files) { //generates an array of files
+      if (isFile(item)) {
+        store[input]['files'].push(item)
+      }
+      else {
+        store[input][item] = {}
+        store[input][item]['sup'] = 'suppers'
+      
+      }
+    // Recursive Read ... How can I do this?
+      
+      // store[input].push(recursiveRead(input + '/' + item))
     }
   }
+  return store // Hmm this recursion problem is pretty difficult.
   // When the folder is being read, it's going to generate a different path.
+}
+
+// The output object should be an object with arrays holding each of the files.
+
+/*
+ {
+  folder1: a,b,c,d,e,
+ 
+ 
+ }
+
+
+*/
+
+doit('prettier.js')
+
+// log.blue(recursiveRead('./')); // It kind of works. But I need to read more about recursion.
+
+
+function readFile(file, filepath = './') {
+  return fs.readFileSync(path.resolve(filepath, file), 'utf8'); // as file
+}
+
+function readFolder(folder) {
+  return fs.readdirSync(folder) // make it a gentler shade of the folder color.
 }
 
 
@@ -254,8 +320,65 @@ function recursiveRead(input) {
 
 
 
-/*
+
+
+
+/*-----------------------------------------
   Title: RegExp-Prettier Question Formatter
-  Type:
+  
+  Description:
+  Creates a JSON object.
+  
+  Todo:
+  
+  Fix the Recursive Reader
+  Play with the Regexp together thing.
+  Ask Reddit about what is an efficient parsing strategy?
+  
+  The things that are relevant are
+    * Getting Questions
+    * Not deleting the old version. Move it to an "unclean" directory.
+    * I mean, at most it should be what ... 10 to 20 mb? That is literally nothing.
+    * A single video is worth more than everything here combined.
+    
+    Questions are Important.
+    Config is Important.
+  
+  Is it better to deal with strings and things as JSON or as strings?
+  
+  JSON gives a pre-defined structure that the things have to play by. 
+  
+  
+  
+*/-----------------------------------------
+
+
+/*
+
+  What is the relative value of
+  regular is period, exclam, question.
+  I seem to be much less effective in the afternoon.
+  
+  Either way, you have to go through the clicking motions to get what you want.
+  
+  Possibly compose the regexp together.
   
 */
+
+// Q: How does this code-formatting look to you?
+function sentenceSearchType(type) {
+  let regex;
+  if (type ===         'question') regex = /[A-Z].*[]/
+  if (type ===           'exclam') regex = /[A-Z].*[]/
+  if (type ===           'period') regex = /[A-Z].*[]/
+  if (type ===           'tagged') regex = /[A-Z].*[]/
+  if (type === 'anyValidSentence') regex = /[A-Z].*[]/
+  if (type ===        'partition') regex = /[A-Z].*[]/
+  return new RegExp(regex, 'g')
+}
+//qend
+
+function matcher(s, type) { // match everything
+  return s.match(sentenceSearchType(type))
+}
+
