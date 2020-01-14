@@ -4,19 +4,13 @@ alias docs='cd ~/documents'
 alias home='cd ~'
 alias root='cd /'
 alias dtop='cd ~/Desktop'
-alias dbox='cd ~/Dropbox'
-alias box='cd ~/Box\ Sync'
-alias gdrive='cd ~/Google\ Drive'
-alias vim="nvim"
-alias vi="nvim"
+alias newvim="nvim"
 alias oldvim="vim"
 alias bashrc='vim ~/.bashrc'
-alias self='vim ~/updates.txt'
-alias boo='vim ~/.foo'
-alias sourcebash='source ~/.bashrc'
+alias sbash='source ~/.bashrc'
+alias svim='source ~/.vimrc'
 alias vimrc='vim ~/.vimrc'
-
-alias sourcevim='source ~/.vimrc'
+alias la='ls -a'
 
 
 gp() {
@@ -37,3 +31,17 @@ set() {
 get() {
   git remote get-url origin
 }
+
+remove() {
+  echo are you sure you wish to de-initialize this git repository?
+  read answer
+  if [[ "$answer" == "yes" ]]
+  then
+    echo Okay. We gon remove it!
+    cat ~/.bashrc
+  else
+    echo The git repo is still intact.
+  fi
+}
+
+

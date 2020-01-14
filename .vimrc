@@ -1,51 +1,70 @@
-" vimrc uses " for comments.
-" THIS IS A VIMRC File.
-"
-"
-"Changelog
-"   - Tried to use commmand S didn't work.
-"   - Stay with VIMRC and BASHRC only.
-"   - Don't know what leader is for the RenameFile function.
-"   - Added font colors with the hi.
-
-
-"Setting internal Vim Commands
-command S source ~/.vimrc
-
-inoremap jk <esc>
-inoremap jj <esc>
-" inoremap " "" <left>
-inoremap ( () <left>
-inoremap [ [] <left>
-inoremap { {} <left>
-" inoremap {<CR> {<CR>} <ESC> O
-" inoremap {;<CR> {<CR>}; <ESC> O
-iab date: <c-r>=strftime("%B %d, %Y:") <CR>
-iab Tra: <c-r>='Organization: ' <CR>
-iab orgo: <c-r>='Organization: ' <CR>
-iab a: <c-r>='Alias: ' <CR>
+syntax on 
+colorscheme delek
+let mapleader=","
+set number
 set tabstop=2
-set expandtab
 set shiftwidth=2
+set softtabstop=2
+set expandtab
+set showcmd
+"set showmatch
+set autoindent
+set smarttab
+set smartindent
 set mouse=a
+set clipboard=unnamed
+set nobackup
+set noswapfile
+set noundofile
+set guifont=Monaco:h11
+set encoding=utf8
+set ruler
 
-hi markdownH1 guifg=blue ctermfg=blue gui=bold cterm=bold 
-hi markdownH2 guifg=red ctermfg=blue gui=bold cterm=bold
-hi markdownH3 guifg=green ctermfg=blue gui=bold cterm=bold 
-hi markdownH4 guifg=purple ctermfg=blue gui=bold cterm=bold 
-hi markdownH5 guifg=blue ctermfg=blue gui=bold cterm=bold 
-hi markdownH6 guifg=blue ctermfg=blue gui=bold cterm=bold
+"set filetype plugin indent on
 
-function! RenameFile()
-    let old_name = expand('%')
-    let new_name = input('New file name: ', expand('%'), 'file')
-    if new_name != '' && new_name != old_name
-        exec ':saveas ' . new_name
-        exec ':silent !rm ' . old_name
-        redraw!
-    endif
-endfunction
+"Learn Vim the Hard Way Source Tricks -- Sourcing Tricks.
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+inoremap ; :
+inoremap <left> <esc>diwa
 
-map <leader>n :call RenameFile()<cr>
 
+
+" Commenting blocks of code.
+map <leader>c ^i"
+map <leader>s :source $MYVIMRC<cr>
+
+
+"Pretty Useful"
+nnoremap <TAB> :bn!<CR> 
+map <leader>v :tabe $MYVIMRC<cr>
+
+  
+
+
+"not sure about this one.
+"inoremap {<cr> {<cr>}<c-o>O
+inoremap {<CR> {<CR><BS>}<Esc>ko
+
+
+
+iab fs! const fs = require('fs')
+iab <expr> date! strftime("%b %d, %Y")
+iab asd This is a test sentence    !
+iab br -------------------------------------
+
+
+
+"------------ Tests. Beyond this point is unsafe and unsaved.
+" Normal Mode Availables
+" <bs>
+" nmap gt :bnext<CR> same as the current <TAB> activation.
+
+"
+"
+" This is a test 
+"
+"
+" 
+"
 
