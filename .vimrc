@@ -1,3 +1,4 @@
+
 syntax on 
 colorscheme delek
 let mapleader=","
@@ -22,25 +23,43 @@ set ignorecase
 set nolazyredraw
 set nowritebackup
 set splitright
- 
+let @q='<c-r><c-r>q' 
 
 
-
-"MY FILES
+'
+"'MY FILES
 " vimrc
 " abc
 " today
 " JANUARY
+
 " TODO
-" Click on a word and it gets quotes around it.
-" 
+" Click on a word and it gets quotes around it. In-progress.
+" Auto-open files.
+" Install Snippets.
+" nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+" nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+"--- the above is advanced tabbing.
 
-
+"Don't use this. Snippets suck if they're hacked. Snippets have to be real. 
+"inoremap ><Tab> ><Esc>F<lyt>o</<C-r>"><Esc>O<Space>
+nnoremap gb :ls<CR>
+nnoremap bd :bd<cr>
+nnoremap ,0 :badd ~/abc.txt<cr>
+inoremap {<CR> {<CR><BS>}<Esc>ko
+inoremap ; :
+inoremap <c-f19> ;
+inoremap <c-bs> <c-w>
+inoremap <s-f19> <esc>di'hPl2x
+inoremap <f19> <esc>ciw'<c-r>"'
 nnoremap <leader>s :source ~/.vim/sessions/peachtree.vim
 nnoremap <leader>s :source ~/.vim/sessions/peachtree.vim
 nnoremap <leader>1 :e! ~/abc.txt<cr>
 nnoremap <leader>a :e! ~/app.js<cr>
 nnoremap <leader>v :e! $MYVIMRC<cr>
+
+nnoremap <leader>c ^i" <esc>
+
 "-------------------------------------------------------------------------- 
 "Jan 15, 2020 -------------------------------------------------------------
 "-------------------------------------------------------------------------- 
@@ -53,7 +72,7 @@ nnoremap <tab> :bnext!<cr>
 " inoremap <f18> <esc>:w<cr>
 inoremap <f18> <esc>gtGa
 nnoremap <f18> <esc>gtGa
-"save it"
+"save it. Not necessay, just use default save."
 inoremap ww <esc>:w<cr>i
 inoremap <s-:> ;
 
@@ -62,27 +81,28 @@ nnoremap <PageDown> :bprevious!<cr>ggOi
 inoremap <PageUp> <esc>:bnext!<cr>ggOi
 nnoremap <PageUp> :bnext!<cr>ggOi
 "-------------------------------------------------------------------------- 
-nnoremap 0 :bd!<cr>
 "split and close window.
 nnoremap w <c-w>q
 nnoremap s <c-w>s
 "-----------------------------------------------------------------EDIT TEXT
-map <leader>c ^i" <esc>
 
 
 "Pretty Useful"
-inoremap ; :
-inoremap <f19> ;
-inoremap <left> <esc>diwa
-inoremap {<CR> {<CR><BS>}<Esc>ko
 iab fs! const fs = require('fs')
 iab <expr> date! strftime("%b %d, %Y")
 iab asd This is a test sentence    !
 iab br -------------------------------------
 
 func! SetupColors() 
-  syn match TAG /^.*\:$/ 
+  syn match TITLE /^.*\:$/
+  syn match TAG /^.*\:$/
+  syn match HASH /^#[A-Z]*/
+  syn match DASH /^-*/
+
+  hi TITLE guifg=blue ctermfg=blue
   hi TAG guifg=blue ctermfg=blue
+  hi HASH guifg=blue ctermfg=blue
+  hi DASH guifg=blue ctermfg=blue
 endfunc
 
 augroup COLORSCHEME_CHANGE | au!
