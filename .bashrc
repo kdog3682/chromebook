@@ -12,6 +12,12 @@ alias svim='source ~/.vimrc'
 alias vimrc='vim ~/.vimrc'
 alias la='ls -a'
 
+gpa() {
+  git add .bashrc
+  git add .vimrc
+  git commit -m "Pushing B and V"
+  git push
+}
 
 gp() {
     git add .bashrc
