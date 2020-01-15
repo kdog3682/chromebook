@@ -5,8 +5,27 @@
 " Right_CMD => page_up
 " Right_OPT => page_down
 " right_shift => f18
-
-
+"
+" Useful commands to run:
+"
+" :version
+" :echo expand('~')
+" :echo $HOME
+" :echo $VIM
+" :echo $VIMRUNTIME
+" 
+" Unused Settings:
+" set filetype plugin indent on
+" set showmatch
+" :args ~/abc.txt | argdo tabe | tabdo syntax on
+"
+"
+" Notes
+" To uppercase: visual select + U
+"
+" (f18 is fn key) (f19 is right-shift)
+"
+"
 syntax on 
 colorscheme delek
 let mapleader=","
@@ -30,58 +49,44 @@ set ruler
 set ignorecase                    "for regex searches.
 set nolazyredraw
 set nowritebackup
-"set filetype plugin indent on
-"set showmatch
-
-iab fun function
-
-nnoremap ,h :-1read $HOME/.vim/.skeleton.red<CR>3jwf>a       
-nnoremap ,vue :-1read $HOME/.vim/.skeleton.vue
-nnoremap ,vuep :-1read $HOME/.vim/.skeleton.vue
+set splitright
 
 
-"Learn Vim the Hard Way Source Tricks -- Sourcing Tricks.
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC
-"I hope this works. It seems to be working.
-nnoremap qq <esc> :w <cr> :source $MYVIMRC<cr>kki
+"Jan 15, 2020 -------------------------------------------------------------
 
-nnoremap <f19>r :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
+autocmd! bufwritepost $MYVIMRC source $MYVIMRC
+" autocmd! bufwritepost ~/abc.txt source $MYVIMRC
 
 
+"-------------------------------------------------------------FILE MANAGEMENT
+nnoremap <s-tab> :bprevious!<cr>
+nnoremap <tab> :bnext!<cr>
+nnoremap <f18> gt  
+inoremap <f18> <esc>:w<cr>
 
-"Commenting blocks of code. This works.
-map <leader>c ^i"
+inoremap <PageDown> <esc>:bprevious!<cr>
+nnoremap <PageDown> :bprevious!<cr>
+inoremap <PageUp> <esc>:bnext!<cr>
+nnoremap <PageUp> :bnext!<cr>
+"-------------------------------------------------------------------------- 
+map <leader>qq :bp<bar>sp<bar>bn<bar>bd!<CR>
+nnoremap 0 :bd!<cr>
+"split and close window.
+nnoremap q <c-w>q
+nnoremap s <c-w>s
+"-----------------------------------------------------------------EDIT TEXT
+map <leader>c ^i" <esc>
 
 
 "Pretty Useful"
-nnoremap <TAB> :bn!<CR> 
-map <leader>v :tabe $MYVIMRC<cr>
-map <leader>1 :tabe ~/documents/today.txt<cr>
-map <leader>3 :tabe ~/documents/app.js<cr>
-map <leader>2 :tabe ~/documents/catchallbuffer.txt<cr>
-map <leader>4 :tabe ~/app.js<cr>
-  
-
 inoremap ; :
 inoremap <f19> ;
 inoremap <left> <esc>diwa
-
-
-
 inoremap {<CR> {<CR><BS>}<Esc>ko
-
-
-
 iab fs! const fs = require('fs')
 iab <expr> date! strftime("%b %d, %Y")
 iab asd This is a test sentence    !
 iab br -------------------------------------
-
-" Make sure you use single quotes
-call plug#begin('~/.vim/plugged')
-call plug#end()
-
 
 func! SetupColors() 
   syn match TAG /^.*\:$/ 
@@ -92,22 +97,37 @@ augroup COLORSCHEME_CHANGE | au!
   au bufread,bufnew *.txt call SetupColors()
 augroup end
 
-func! OpenFiles() 
-  :tabnew 'abc.js'
-endfunc
-
-
+iab zx abc
 "------------ Tests. BEYOND THIS POINT IS UNSAFE."
 "
 "
-" Normal Mode Availables
-" <bs>
-" nmap gt :bnext<CR> same as the current <TAB> activation.
+"
+"
+
+" --------------------------------------Vim Plug
+" call plug#begin('~/.vim/plugged')
+" call plug#end()
+" ----------------------------------------------
+" nnoremap ,h :-1read $HOME/.vim/.skeleton.red<CR>3jwf>a       
+" nnoremap ,vue :-1read $HOME/.vim/.skeleton.vue
+" nnoremap ,vuep :-1read $HOME/.vim/.skeleton.vue
+" nnoremap <f19>r :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
 "
 "
 "
-"
-"
-"
+" Use right cmd + option to tab within a tab page. (internal)
+" Use fn to tab between tabs. (external)
+" There is also a way to toggle multiple screens.
+
+" nnoremap <TAB> :bn!<CR> 
+" map <leader>v :tabe $MYVIMRC<cr>
+" map <leader>1 :tabe ~/documents/today.txt<cr>
+" map <leader>3 :tabe ~/documents/app.js<cr>
+" map <leader>2 :tabe ~/documents/catchallbuffer.txt<cr>
+" map <leader>4 :tabe ~/app.js<cr>
+
+
+
+
 
 
