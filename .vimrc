@@ -1,4 +1,6 @@
 
+
+
 syntax on 
 colorscheme delek
 let mapleader=","
@@ -16,7 +18,7 @@ set clipboard=unnamed
 set nobackup
 set noswapfile
 set noundofile
-set guifont=Monaco:h11
+set guifont=Monaco:h13
 set encoding=utf8
 set ruler
 set ignorecase                
@@ -26,32 +28,47 @@ set splitright
 let @q='<c-r><c-r>q' 
 
 
-'
 "'MY FILES
 " vimrc
 " abc
 " today
 " JANUARY
+" :%s//bar/g
+  
 
-" TODO
-" Click on a word and it gets quotes around it. In-progress.
-" Auto-open files.
-" Install Snippets.
-" nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
-" nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
-"--- the above is advanced tabbing.
+"------------------------------------- 
+" inoremap 9 (
+" inoremap 0 )
+" inoremap <s-n> 9
+" inoremap <s-z> 0
 
-"Don't use this. Snippets suck if they're hacked. Snippets have to be real. 
-"inoremap ><Tab> ><Esc>F<lyt>o</<C-r>"><Esc>O<Space>
+
+
+
+
+inoremap <c-pageup> <esc>ggO
+inoremap <c-pagedown> <esc>Gz<cr>O
+
+
+"------------------------------------- 
+inoremap <down> <down>
+inoremap <up> <up>
+
+inoremap <s-left> <c-w>
+
+nnoremap <leader>W :argadd ~/webdev/*
+
+nnoremap <leader>A :argadd ~/today/*
+nnoremap <leader>t :e ~/jsbin.txt<cr> 
+nnoremap <leader>n :call RenameFile()<cr>
 nnoremap gb :ls<CR>
 nnoremap bd :bd<cr>
 nnoremap ,0 :badd ~/abc.txt<cr>
 inoremap {<CR> {<CR><BS>}<Esc>ko
-inoremap ; :
-inoremap <c-f19> ;
+inoremap <c-down> ;
 inoremap <c-bs> <c-w>
-inoremap <s-f19> <esc>di'hPl2x
-inoremap <f19> <esc>ciw'<c-r>"'
+inoremap <D-'> <esc>di'hPl2x
+inoremap <A-'> <esc>ciw'<c-r>"'
 nnoremap <leader>s :source ~/.vim/sessions/peachtree.vim
 nnoremap <leader>s :source ~/.vim/sessions/peachtree.vim
 nnoremap <leader>1 :e! ~/abc.txt<cr>
@@ -72,14 +89,11 @@ nnoremap <tab> :bnext!<cr>
 " inoremap <f18> <esc>:w<cr>
 inoremap <f18> <esc>gtGa
 nnoremap <f18> <esc>gtGa
-"save it. Not necessay, just use default save."
-inoremap ww <esc>:w<cr>i
-inoremap <s-:> ;
 
-inoremap <PageDown> <esc>:bprevious!<cr>ggOi
-nnoremap <PageDown> :bprevious!<cr>ggOi
-inoremap <PageUp> <esc>:bnext!<cr>ggOi
-nnoremap <PageUp> :bnext!<cr>ggOi
+inoremap <PageDown> <esc>:bprevious!<cr>ggO
+nnoremap <PageDown> :bprevious!<cr>ggO
+inoremap <PageUp> <esc>:bnext!<cr>ggO
+nnoremap <PageUp> :bnext!<cr>ggO
 "-------------------------------------------------------------------------- 
 "split and close window.
 nnoremap w <c-w>q
@@ -89,27 +103,43 @@ nnoremap s <c-w>s
 
 "Pretty Useful"
 iab fs! const fs = require('fs')
-iab <expr> date! strftime("%b %d, %Y")
+iab <expr> dd strftime("[%b %d, %Y]")
+iab <expr> d! strftime("[Timestamp %H:%M:%S]")
 iab asd This is a test sentence    !
-iab br -------------------------------------
+iab br ------------------------------------------------------------------------
+iab o: [Observations]
+
+
 
 func! SetupColors() 
   syn match TITLE /^.*\:$/
   syn match TAG /^.*\:$/
   syn match HASH /^#[A-Z]*/
-  syn match DASH /^-*/
+  syn match bullet /^-*/
+  syn match MARK /.*\/.*/
 
   hi TITLE guifg=blue ctermfg=blue
-  hi TAG guifg=blue ctermfg=blue
-  hi HASH guifg=blue ctermfg=blue
-  hi DASH guifg=blue ctermfg=blue
+  " hi TAG   guifg=blue ctermfg=blue
+  " hi HASH  guifg=black ctermfg=magenta
+  " hi bullet  guifg=red ctermfg=blue
+  " hi MARK  guifg=green ctermfg=blue
 endfunc
 
 augroup COLORSCHEME_CHANGE | au!
   au bufread,bufnew *.txt call SetupColors()
 augroup end
 
-"----------------------- Tests. BEYOND THIS POINT IS UNSAFE."
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+
+"----------------------- Tests. BEYOND ThiS POINT IS UNSAFE."
 "
 "
 "
@@ -128,7 +158,7 @@ augroup end
 " nnoremap ,h :-1read $HOME/.vim/.skeleton.red<CR>3jwf>a       
 " nnoremap ,vue :-1read $HOME/.vim/.skeleton.vue
 " nnoremap ,vuep :-1read $HOME/.vim/.skeleton.vue
-" nnoremap <f19>r :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
+" nnoremap <down>r :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
 "
 "
 "
@@ -146,7 +176,7 @@ augroup end
 " These settings are used with:
 " Macbook Pro Karabiner Elements.
 " CAPS_LOCK => ESC
-" fn => f19
+" fn => down
 " Right_CMD => page_up
 " Right_OPT => page_down
 " right_shift => f18
@@ -168,8 +198,14 @@ augroup end
 " Notes
 " To uppercase: visual select + U
 "
-" (f18 is fn key) (f19 is right-shift)
-" iab zx abdcabdc 
+" (f18 is fn key) (down is right-shift)
 " 
 "
+" Auto-open files.
+" Install Snippets.
+" nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+" nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+"--- the above is advanced tabbing. Not  entirely sure if I need it. 
+"Don't use this. Snippets suck if they're hacked. Snippets have to be real. 
+"inoremap ><Tab> ><Esc>F<lyt>o</<C-r>"><Esc>O<Space>
 
